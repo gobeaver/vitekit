@@ -1,0 +1,36 @@
+# Compiled binaries. The CLI is built from source; a committed executable is
+# both platform-specific and a supply-chain liability.
+*.exe
+*.dll
+*.so
+*.dylib
+/vitekit
+/example/example
+/cmd/vitekit/vitekit
+bin/
+
+# The workspace file is committed so the working tree builds against itself;
+# its checksum file is regenerated on demand and only adds churn.
+go.work.sum
+
+# Test and coverage output
+*.test
+*.out
+coverage.txt
+
+# Vite build output and dev-server state
+dist/
+.vite/
+node_modules/
+
+# ...except the committed build fixtures that keep the go:embed deployment path
+# compiling and tested without a Node toolchain.
+!testdata/**/dist/
+!testdata/**/dist/**
+!example/embed/dist/
+!example/embed/dist/**
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store

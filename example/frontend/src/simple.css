@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap');
+
+:root { font-family: Manrope, sans-serif; color: #eaf0eb; background: #101615; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #101615; }
+button { border: 0; border-radius: 7px; padding: 10px 14px; color: #152017; background: #c9f269; font: 600 12px Manrope, sans-serif; cursor: pointer; }
+button:hover { background: #ddff8d; }
+.app-shell { width: min(100% - 40px, 920px); margin: 0 auto; padding: 56px 0; }
+.app-header, .panel-heading, .summary, li { display: flex; align-items: center; }
+.app-header, .panel-heading { justify-content: space-between; gap: 24px; }
+.kicker { margin: 0 0 10px; color: #91ab84; font: 500 11px 'DM Mono', monospace; letter-spacing: .12em; }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 8px; font-size: clamp(30px, 6vw, 54px); letter-spacing: -.05em; }
+h2 { margin-bottom: 0; font-size: 20px; }
+.subtitle, .muted { color: #91a09a; }
+.refresh, .maintenance { background: #eaf0eb; }
+.summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 44px 0 20px; overflow: hidden; border: 1px solid #2b3932; border-radius: 10px; background: #2b3932; }
+.summary div { display: grid; gap: 8px; padding: 18px; background: #17201c; }
+.summary span, li small { color: #91a09a; font-size: 12px; }
+.summary strong { font-size: 18px; }
+.panel { padding: 24px; border: 1px solid #2b3932; border-radius: 10px; background: #17201c; }
+.maintenance.active { color: #fff; background: #af5b4e; }
+.activity-list { display: grid; gap: 2px; padding: 0; margin: 24px 0 0; list-style: none; }
+li { gap: 12px; padding: 14px 0; border-top: 1px solid #2b3932; }
+li > span:nth-child(2) { display: grid; gap: 3px; flex: 1; }
+li time { color: #b7c4bd; font: 12px 'DM Mono', monospace; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #c9f269; }
+.dot.warning { background: #f1b35b; }
+@media (max-width: 620px) { .app-shell { width: min(100% - 28px, 920px); padding: 32px 0; } .summary { grid-template-columns: repeat(2, 1fr); } .app-header { align-items: flex-start; } }

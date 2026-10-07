@@ -1,0 +1,1 @@
+function o(a,c){const e=document.createElement("section");e.className="badge";const t=document.createElement("h2");t.textContent=a;const n=document.createElement("p");return n.textContent=c,e.append(t,n),e}export{o as b};

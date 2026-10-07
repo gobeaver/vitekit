@@ -1,0 +1,12 @@
+// Local development workspace. Consumers of the published modules never see
+// this file — it only lets `go build`/`go test` resolve the adapter modules
+// against the working tree instead of a tagged release.
+go 1.25.0
+
+use (
+	.
+	./adapter/echo
+	./adapter/fiber
+	./adapter/gin
+	./example
+)

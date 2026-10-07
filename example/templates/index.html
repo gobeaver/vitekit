@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101416">
+    <title>{{ .title }}</title>
+    {{ viteReactPreamble }}
+    {{ vite "src/main.jsx" }}
+  </head>
+  <body>
+    <div id="app">
+      <main style="min-height: 100vh; max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem; font: 16px system-ui, sans-serif; color: #eaf0eb; background: #101615;">
+        <h1>Launch Console</h1>
+        <p>Loading the React frontend...</p>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+# golangci-lint configuration.
+#
+# This replaces the standalone vet and gofmt steps: govet is one of the linters
+# below, and the formatters section covers gofmt. It does not replace the test
+# job — no linter catches a data race, or a dev-server process tree that
+# survives Ctrl+C on Windows, which is the riskiest behavior in this package.
+version: "2"
+
+linters:
+  enable:
+    - bodyclose      # a leaked response body holds a connection open
+    - copyloopvar
+    - errorlint      # %w rather than %v, so callers can still match on a cause
+    - gocritic
+    - gosec
+    - makezero
+    - misspell
+    - nilerr
+    - predeclared
+    - revive
+    - unconvert
+    - usetesting
+
+  settings:
+    gosec:
+      # These rules describe what this package is for rather than a defect in
+      # it. Everything excluded here has a test that pins the real property.
+      excludes:
+        # Serving a file named by the request path is the asset handler's whole
+        # job. FuzzAssetHandlerStaysInsideTheOutputDirectory covers traversal.
+        - G304
+        # Running the configured dev command is DevOrchestrator's whole job.
+        # checkDevCommand screens it, and FuzzCommandWithVitePort pins the
+        # invariant that injection cannot change which program runs.
+        - G204
+        # Build output and the .vite/hot marker are read by the browser and by
+        # the dev server; 0600 would break both. They hold no secrets.
+        - G301
+        - G306
+        # Tags returns template.HTML deliberately. Every value interpolated
+        # into it is escaped first, which FuzzTagsEscapeManifestFilenames pins.
+        - G203
+
+    revive:
+      rules:
+        # An http.HandlerFunc that ignores its *Request is normal, and naming
+        # the parameter documents the signature.
+        - name: unused-parameter
+          disabled: true
+
+  exclusions:
+    rules:
+      # Test code reaches for its own fixtures and calls its own local server.
+      - path: _test\.go
+        linters:
+          - gosec
+
+formatters:
+  enable:
+    - gofmt

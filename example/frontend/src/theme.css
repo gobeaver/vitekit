@@ -1,0 +1,25 @@
+/* A standalone CSS entry. vitekit renders these as <link rel="stylesheet">
+   rather than a module script, in development as well as production. */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.5 system-ui, sans-serif;
+  background: #101615;
+  color: #eaf0eb;
+}
+
+.badge {
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #2a3a33;
+  border-radius: 12px;
+  background: #16201d;
+}
+
+.badge h2 {
+  margin: 0 0 0.5rem;
+}

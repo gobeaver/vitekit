@@ -1,0 +1,12 @@
+{
+  "src/main.js": {
+    "file": "assets/main-BsO1RtEz.js",
+    "src": "src/main.js",
+    "isEntry": true,
+    "css": ["assets/main-DkP2xy91.css"],
+    "imports": ["src/vendor.js"]
+  },
+  "src/vendor.js": {
+    "file": "assets/vendor-C8s2xQ1p.js"
+  }
+}

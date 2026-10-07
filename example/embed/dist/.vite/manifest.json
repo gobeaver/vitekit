@@ -1,0 +1,20 @@
+{
+  "_shared-CWEVH_WY.js": {
+    "file": "assets/shared-CWEVH_WY.js",
+    "name": "shared"
+  },
+  "src/app.ts": {
+    "file": "assets/app-DS1-GUQX.js",
+    "name": "app",
+    "src": "src/app.ts",
+    "isEntry": true,
+    "imports": [
+      "_shared-CWEVH_WY.js"
+    ]
+  },
+  "src/theme.css": {
+    "file": "assets/theme-Dp6o0bFX.css",
+    "src": "src/theme.css",
+    "isEntry": true
+  }
+}
